@@ -1,0 +1,72 @@
+{
+  "menu": [{ 
+     "cafe americano":{
+         "item": "Café americano",
+         "precio": 5,
+        "categoria": "desayuno"}, 
+   "cafe con leche": {
+      "item": "Café con leche",
+      "precio": 7,
+      "categoria": "desayuno"
+   },
+   "sandwich de jamon y queso": {
+       "item": "Sandwich de jamón y queso",
+       "precio": 10,
+       "categoria": "desayuno"
+   },
+   "jugo de frutas natural":{
+       "item": "Jugo de frutas natural",
+       "precio": 7,
+       "cateogoria": "desayuno"
+   },
+   "hamburguesa simple": {
+       "item": "Hamburguesa simple",
+       "precio": 10,
+       "categoría": "resto del día",
+       "tipo": {
+           "res": "res",
+           "pollo": "pollo",
+           "vegetariana": "vegetariana"
+       }
+   }, 
+   "hamburguesa doble": {
+    "item": "Hamburguesa doble",
+    "precio": 15,
+    "categoría": "resto del día",
+    "tipo": {
+        "res": "res",
+        "pollo": "pollo",
+        "vegetariana": "vegetariana"
+    }
+   },
+   "papa fritas":{
+    "item": "Papas fritas",
+    "precio": 5,
+    "categoría": "resto del día"
+   },
+   "aros de cebolla":{
+    "item": "Aros de cebolla",
+    "precio": 5,
+    "categoría": "resto del día"
+   },
+   "agua5":{
+    "item": "Agua 500ml",
+    "precio": 5,
+    "categoría": "resto del día"
+   },
+   "agua75":{
+    "item": "Agua 750ml",
+    "precio": 7,
+    "categoría": "resto del día"
+   },
+   "gaseosa5":{
+    "item": "Bebida/gaseosa 500ml",
+    "precio": 7,
+    "categoría": "resto del día"
+   },
+   "gaseosa75":{
+    "item": "Bebida/gaseosa 750ml",
+    "precio": 10,
+    "categoría": "resto del día"
+   }}]  
+}
