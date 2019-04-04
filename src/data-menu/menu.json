@@ -3,21 +3,22 @@
      "cafe americano":{
          "item": "Café americano",
          "precio": 5,
-        "categoria": "desayuno"}, 
+        "categoría": "desayuno"
+    }, 
    "cafe con leche": {
       "item": "Café con leche",
       "precio": 7,
-      "categoria": "desayuno"
+      "categoría": "desayuno"
    },
    "sandwich de jamon y queso": {
        "item": "Sandwich de jamón y queso",
        "precio": 10,
-       "categoria": "desayuno"
+       "categoría": "desayuno"
    },
    "jugo de frutas natural":{
        "item": "Jugo de frutas natural",
        "precio": 7,
-       "cateogoria": "desayuno"
+       "cateogoría": "desayuno"
    },
    "hamburguesa simple": {
        "item": "Hamburguesa simple",
@@ -27,7 +28,8 @@
            "res": "res",
            "pollo": "pollo",
            "vegetariana": "vegetariana"
-       }
+       },
+       "familia":"Hamburguesas"
    }, 
    "hamburguesa doble": {
     "item": "Hamburguesa doble",
@@ -37,36 +39,56 @@
         "res": "res",
         "pollo": "pollo",
         "vegetariana": "vegetariana"
-    }
+    },
+    "familia":"Hamburguesas"
    },
    "papa fritas":{
     "item": "Papas fritas",
     "precio": 5,
-    "categoría": "resto del día"
+    "categoría": "resto del día",
+    "familia":"Acompañamientos"
    },
    "aros de cebolla":{
     "item": "Aros de cebolla",
     "precio": 5,
-    "categoría": "resto del día"
+    "categoría": "resto del día",
+    "familia":"Acompañamientos"
    },
    "agua5":{
     "item": "Agua 500ml",
     "precio": 5,
-    "categoría": "resto del día"
+    "categoría": "resto del día",
+    "familia":"Para tomar"
    },
    "agua75":{
     "item": "Agua 750ml",
     "precio": 7,
-    "categoría": "resto del día"
+    "categoría": "resto del día",
+    "familia":"Para tomar"
    },
    "gaseosa5":{
     "item": "Bebida/gaseosa 500ml",
     "precio": 7,
-    "categoría": "resto del día"
+    "categoría": "resto del día",
+    "familia":"Para tomar"
    },
    "gaseosa75":{
     "item": "Bebida/gaseosa 750ml",
     "precio": 10,
-    "categoría": "resto del día"
-   }}]  
+    "categoría": "resto del día",
+    "familia":"Para tomar"
+   },
+"huevo":{
+    "item": "huevo",
+    "precio": 1,
+    "categoría": "resto del día",
+    "familia":"adicional"
+},
+"queso":{
+    "item": "queso",
+    "precio": 1,
+    "categoría": "resto del día",
+    "familia":"adicional"
+}}
+]  
 }

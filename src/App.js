@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// import init from './config/config';
+import menu from './menu/menu';
 
 class App extends Component {
   
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container-all">
+        <div className="burger-header color-one">
+           <h1 className="ml-3 mt-3">BURGER QUEEN</h1>
+        </div>
+        <div className="d-flex flex-row justify-content-around py-3 color-height">
+        <button className="btn-menu color-height color-white"><a className="links color-white"
+        href="#desayuno" 
+         rel="noopener noreferrer">DESAYUNO</a></button>
+        <button className="btn-menu color-height color-white"><a className="links color-white"
+        href="#resto" 
+         rel="noopener noreferrer">RESTO DEL DÍA</a></button>
+        </div>
+
+        <div className="burger-body">
+         <menu/>
+         <div>
+
+         </div>
+        </div> 
+        
+        <div className="burger-footer">
+           <h6> </h6>
+        </div>
       </div>
     );
   }
