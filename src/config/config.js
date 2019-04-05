@@ -4,8 +4,7 @@ const firebase = require("firebase/app");
 // Required for side-effects
 require("firebase/firestore");
 
-export const init = () => {
- const config = {
+export const config = {
     apiKey: "AIzaSyCjxok38nQggyPiI3U0hiAuuMybHu6TpDM",
     authDomain: "burger-queen-db58c.firebaseapp.com",
     databaseURL: "https://burger-queen-db58c.firebaseio.com",
@@ -14,6 +13,8 @@ export const init = () => {
     messagingSenderId: "390496930817"
   };
   firebase.initializeApp(config);
+
+
 
   firebase.firestore().enablePersistence()
   .then(function() {
@@ -31,4 +32,4 @@ export const init = () => {
           // ...
       }
   });
-}
+  export default firebase;
