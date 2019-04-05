@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.css'
+// import inicio from './inicio/inicio'
+
 // import firebase from './config/config.js'
 
 // const db = firebase.firestore();
 
-// import menu from './menu/menu';
+
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("")
+    fetch("https://joanlazo.github.io/LIM008-fe-burger-queen/src/data-menu/menu.json")
       .then(res => res.json())
       .then(
         (result) => {
@@ -39,7 +41,7 @@ class App extends Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, menu } = this.state;
     if (error) {
      return <div>Error: {error.message}</div>;
    } else if (!isLoaded) {
@@ -61,20 +63,42 @@ class App extends Component {
 
         <div className="burger-body">
       
-          <ul>
+        <div className="container">
+          <div className="row">
+           <div className="col-5">
+             <div className="d-flex flex-column">
           {menu.map(elem => (
-            <li key={elem.id}>
-              {elem.item} s/.{elem.precio}
-            </li>
+            <button key={elem.id} className="btn-menu color-four my-2">{elem.item}  s/.{elem.precio}</button>
           ))}
-        </ul>
+             </div>
+            </div>
 
-         <div>
+            <div className="col-7">
+            <div>
+            <div className="my-4 color-white-b">
+            <form className="py-3">
+                <div className="d-flex justify-content-between align-items-center">
+                  <h3>Producto</h3>
+                  <h3>Precio</h3>
+                  <h3>Cantidad</h3>
+                </div>
+                <span></span>
+                <span></span>
+                <img src='https://user-images.githubusercontent.com/44485081/55659563-e0045700-57c7-11e9-971e-d57e2b55ddf7.png' className="delete-img" alt="logo" />
+            </form>
+        </div>
+            </div>
+          </div>
 
+
+           </div>
+          </div>
+
+          
          </div>
 
-        </div> 
-        
+
+      
         <div>
            <h6> </h6>
         </div>
@@ -82,6 +106,7 @@ class App extends Component {
       </div>
     );
   }
+}
 }
 
 export default App;
