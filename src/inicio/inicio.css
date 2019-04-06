@@ -18,7 +18,7 @@
     color: rgb(43, 41, 41);
   }
 
-  .burger-header {
+  .burger-header-inicio {
     min-height: 100vh;
     display: flex;
     flex-direction: column;

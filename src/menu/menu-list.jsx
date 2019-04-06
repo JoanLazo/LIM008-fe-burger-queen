@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './menu.css';
+// import firebase from './config/config.js'
+// const db = firebase.firestore();
 
-class menu extends Component {
+class Menulist extends Component {
   
     render() {
       return (
@@ -22,4 +24,4 @@ class menu extends Component {
     }
   }
   
-  export default menu;
+  export default Menulist;

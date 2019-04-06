@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css'
-// import inicio from './inicio/inicio'
-
+import './App.css';
+// import Inicio from './inicio/inicio'
+import Menulist from './menu/menu-list';
 // import firebase from './config/config.js'
 
 // const db = firebase.firestore();
@@ -64,7 +64,7 @@ class App extends Component {
         <div className="burger-body">
       
         <div className="container">
-          <div className="row">
+          <div className="row"> 
            <div className="col-5">
              <div className="d-flex flex-column">
           {menu.map(elem => (
@@ -75,33 +75,15 @@ class App extends Component {
 
             <div className="col-7">
             <div>
-            <div className="my-4 color-white-b">
-            <form className="py-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <h3>Producto</h3>
-                  <h3>Precio</h3>
-                  <h3>Cantidad</h3>
-                </div>
-                <span></span>
-                <span></span>
-                <img src='https://user-images.githubusercontent.com/44485081/55659563-e0045700-57c7-11e9-971e-d57e2b55ddf7.png' className="delete-img" alt="logo" />
-            </form>
-        </div>
+            <Menulist/>
             </div>
           </div>
-
 
            </div>
           </div>
 
           
          </div>
-
-
-      
-        <div>
-           <h6> </h6>
-        </div>
 
       </div>
     );
