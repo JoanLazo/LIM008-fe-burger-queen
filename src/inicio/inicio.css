@@ -1,37 +1,25 @@
 
-  .color-four {
-    background: #FFDE55;
-  }
-  .color-five{
-    background: #FFA300;
-  }
-  .color-six{
-    background: #DB0404;
-  }
-  .color-seven{
-    background: #FF432E;
-  }
-  .color-white{
-    color: #e5ebea;
-  }
-  .color-black{
-    color: rgb(43, 41, 41);
-  }
-
-  .burger-header-inicio {
+  .burger-fondo {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;   
     font-size: calc(10px + 2vmin);
     color: white;
     background-image: url('../img/hamburguesa-vegana.jpg')
    }
 
-   .btn-menu {
-     padding: 30px;
+   .btn-menu-inicio {
+     padding: 20px;
      border-radius: 10px;
      border: none;
      font-size: 25px;
+     margin-top: 15%;
    }
+   .oscuro{
+    min-height: 100vh;
+     background-color: rgba(13, 14, 13, 0.575);
+   }
+   .text-title{
+    font-size: 50px;
+  }

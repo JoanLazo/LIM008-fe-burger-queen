@@ -4,6 +4,7 @@ body {
 .text-center {
   text-align: center;
 }
+
 .burger-header {
   min-height: 100px;
   display: flex;
@@ -14,10 +15,10 @@ body {
   color: white;
 }
 .btn-menu {
-  padding: 15px;
+  padding: 12px;
   border-radius: 10px;
   border: none;
-  font-size: 18px;
+  font-size: 15px;
 }
 .color-one {
   background: #DB0404;
@@ -55,6 +56,7 @@ body {
 .links{
   text-decoration: none;
   text-decoration-color: #e5ebea;
+  color: #e5ebea;
 }
 .links:hover{
   text-decoration: none;
