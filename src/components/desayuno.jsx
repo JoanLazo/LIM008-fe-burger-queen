@@ -49,18 +49,21 @@ const Desayuno = () => {
    <div>Loading ...</div>
       ) : (
       <div className="d-flex flex-column flex-nowrap">
-      {/* <h1>Desayuno</h1> */}
-        {data.menu.map(elem => (
-        <button key={elem.id.value} className="btn-menu color-four my-2" type="button">
-           {elem.item}
-           {' '}
-           s/.
-           {elem.precio}
-        </button>
-        ))}
- </div>
+        {data.menu.map((elem) => {
+          if (elem.categoría === 'desayuno') {
+            return (
+              <button key={elem.id} className="btn-menu color-four my-2" type="button">
+                {elem.item}
+                {' '}
+                s/.
+                {elem.precio}
+             </button>
+            );
+          }
+        })}
+        </div>
       )};
-</div>
+    </div>
   </div>
   <div className="col-7">
                 <div>

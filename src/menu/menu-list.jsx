@@ -52,7 +52,7 @@ const Menulist = () => {
     <h4 className="pl-2">Total : </h4> <span />
        <div className="flex-row">
          <label htmlFor="input" className="mr-2 mt-3 pl-2">Cliente </label>
-         <input type="text" name="username" value="" />
+         <input type="text" name="username" />
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center">
           <button type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>

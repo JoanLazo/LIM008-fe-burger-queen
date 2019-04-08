@@ -8,7 +8,7 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Desayuno from './desayuno';
+import Desayuno from './Desayuno';
 import Resto from './resto';
 // import Inicio from '../inicio/inicio';
 
