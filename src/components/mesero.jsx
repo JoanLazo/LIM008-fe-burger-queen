@@ -9,7 +9,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Desayuno from './Desayuno';
-import Resto from './resto';
+import Resto from './Resto';
 // import Inicio from '../inicio/inicio';
 
 const Mesero = () => (
@@ -21,18 +21,18 @@ const Mesero = () => (
         <nav>
         <div className="d-flex flex-row justify-content-around py-3 color-height">
             <button className="btn-menu color-height color-white" type="button">
-        <Link className="links" to="/desayuno">DESAYUNO</Link>
+        <Link className="links" to="/mesero/desayuno">DESAYUNO</Link>
       </button>
             <button className="btn-menu color-height color-white" type="button">
-        <Link className="links" to="/resto">RESTO DEL DÍA</Link>
+        <Link className="links" to="/mesero/resto">RESTO DEL DÍA</Link>
       </button>
           </div>
       </nav>
       {/* <div>
         <Desayuno />
       </div> */}
-        <Route path="/desayuno" component={Desayuno} />
-        <Route path="/resto" component={Resto} />
+        <Route path="/mesero/desayuno" component={Desayuno} />
+        <Route path="/mesero/resto" component={Resto} />
       </div>
       </Router>
 );

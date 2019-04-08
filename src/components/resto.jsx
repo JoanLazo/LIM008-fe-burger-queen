@@ -8,7 +8,7 @@
 /* eslint-disable react/jsx-indent */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Menulist from '../menu/menu-list';
+import Menulist from '../menu/Menu-list';
 
 const Resto = () => {
   const [data, setData] = useState({ menu: [] });
@@ -61,11 +61,11 @@ const Resto = () => {
         </div>
       )}
     </div>
-      <div className="col-7">
+              </div>
+              <div className="col-7">
                 <div>
                   <Menulist />
                 </div>
-              </div>
               </div>
         </div>
         </div>
