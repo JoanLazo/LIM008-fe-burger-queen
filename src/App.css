@@ -20,6 +20,9 @@ body {
   border: none;
   font-size: 15px;
 }
+.btn-menu:hover{
+  cursor: pointer;
+}
 .color-one {
   background: #DB0404;
 }

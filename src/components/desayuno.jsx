@@ -31,10 +31,10 @@ const Desayuno = () => {
     fetchData();
   }, []);
 
-  // const addpedido = (prod) => {
-  //   prod.data.menu.id = data.menu.length + 1;
-  //   setUsers([...data.menu, prod]);
-  // };
+  const addPedido = (dat) => {
+    dat.menu.id = data.menu.length + 1;
+    setData([...data.menu, dat]);
+  };
 
   return (
     <div className="container">
@@ -47,6 +47,7 @@ const Desayuno = () => {
               <div>Loading ...</div>
             ) : (
               <div className="d-flex flex-column flex-nowrap">
+                <h1>Desayuno</h1>
                 {data.menu.map((elem) => {
                   if (elem.categoría === 'desayuno') {
                     return (

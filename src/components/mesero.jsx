@@ -28,8 +28,8 @@ const Mesero = () => (
       </button>
           </div>
       </nav>
-        <Route path="/mesero/desayuno" component={Desayuno} exact />
-        <Route path="/mesero/resto" component={Resto} exact />
+        <Route path="/mesero/desayuno" component={Desayuno} />
+        <Route path="/mesero/resto" component={Resto} />
       </div>
       </Router>
 );
