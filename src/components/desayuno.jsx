@@ -31,10 +31,10 @@ const Desayuno = () => {
     fetchData();
   }, []);
 
-  const addPedido = (dat) => {
-    dat.menu.id = data.menu.length + 1;
-    setData([...data.menu, dat]);
-  };
+  // const addPedido = (dat) => {
+  //   dat.menu.id = data.menu.length + 1;
+  //   setData([...data.menu, dat]);
+  // };
 
   return (
     <div className="container">
