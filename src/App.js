@@ -10,8 +10,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Mesero from './components/Mesero';
-import Inicio from './inicio/Inicio';
+import Mesero from './components/mesero';
+import Inicio from './inicio/inicio';
 // import Menulist from './menu/menu-list';
 
 // import firebase from './config/config.js'
@@ -20,10 +20,10 @@ import Inicio from './inicio/Inicio';
 
 const App = () => (
     <BrowserRouter>
-    <main className="container-all" />
+    <div className="container-all" />
          <div>
            <Route path="/" component={Inicio} exact />
-           <Route path="/mesero" component={Mesero} />
+           <Route path="/mesero" component={Mesero} exact />
        </div>
      </BrowserRouter>
 );

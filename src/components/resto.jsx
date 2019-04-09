@@ -8,7 +8,7 @@
 /* eslint-disable react/jsx-indent */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Menulist from '../menu/Menu-list';
+import Menulist from '../menu/menu-list';
 
 const Resto = () => {
   const [data, setData] = useState({ menu: [] });

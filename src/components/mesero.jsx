@@ -8,8 +8,8 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Desayuno from './Desayuno';
-import Resto from './Resto';
+import Desayuno from './desayuno';
+import Resto from './resto';
 // import Inicio from '../inicio/inicio';
 
 const Mesero = () => (
@@ -28,11 +28,8 @@ const Mesero = () => (
       </button>
           </div>
       </nav>
-      {/* <div>
-        <Desayuno />
-      </div> */}
-        <Route path="/mesero/desayuno" component={Desayuno} />
-        <Route path="/mesero/resto" component={Resto} />
+        <Route path="/mesero/desayuno" component={Desayuno} exact />
+        <Route path="/mesero/resto" component={Resto} exact />
       </div>
       </Router>
 );
