@@ -8,8 +8,9 @@ import './menu.css';
 // import firebase from './config/config.js'
 // const db = firebase.firestore();
 
-const Menulist = () => {
+const Menulist = (props) => {
   const [count, setCount] = useState(0);
+  // const [pedido, setPedido] = useState(data);
 
   return (
     <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
@@ -23,7 +24,8 @@ const Menulist = () => {
           </tr>
         </thead>
         <tbody className="text-center">
-          <tr>
+          {props.data.menu.id === props.data.menu.id  ? (
+          <tr key={}>
             <td>{}</td>
             <td>{}</td>
             <td>
@@ -37,9 +39,11 @@ const Menulist = () => {
               <button className="btn-ico" type="button"><img src="https://user-images.githubusercontent.com/44485081/55659563-e0045700-57c7-11e9-971e-d57e2b55ddf7.png" className="ico-menu-list" alt="logo" /></button>
             </td>
           </tr>
-          <tr>
-            {/* <td colSpan={3}>No hay pedidos</td> */}
-          </tr>
+          ) : (
+            <tr>
+              {/* <td colSpan={3}>No hay pedidos</td> */}
+            </tr>
+          )}
         </tbody>
       </table>
       <h4 className="pl-2">Total : </h4>

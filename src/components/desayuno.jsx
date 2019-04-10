@@ -11,6 +11,10 @@ const Desayuno = () => {
   const [data, setData] = useState({ menu: [] });
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const elemMenu = {
+    id: data.menu.id, item: data.menu.item, precio: data.menu.precio, cantidad: data.menu.cantidad,
+  };
+  const [producto, setProducto] = useState(elemMenu);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,10 +35,9 @@ const Desayuno = () => {
     fetchData();
   }, []);
 
-  // const addPedido = (dat) => {
-  //   dat.menu.id = data.menu.length + 1;
-  //   setData([...data.menu, dat]);
+  // const addPedido = (prod) => {
   // };
+
 
   return (
     <div className="container">
@@ -51,7 +54,7 @@ const Desayuno = () => {
                 {data.menu.map((elem) => {
                   if (elem.categoría === 'desayuno') {
                     return (
-                      <button key={elem.id} className="btn-menu color-four my-2" type="button">
+                      <button onClick={() => setProducto(producto)} key={elem.id} className="btn-menu color-four my-2" type="button">
                         {elem.item}
                         {' '}
                         s/.
@@ -66,7 +69,7 @@ const Desayuno = () => {
         </div>
         <div className="col-7">
           <div>
-            <Menulist data={data} />
+            <Menulist producto={producto} />
           </div>
         </div>
       </div>
