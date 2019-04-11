@@ -5,16 +5,26 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// eslint-disable-next-line import/no-unresolved
 import Menulist from '../menu/menu-list';
 
 const Desayuno = () => {
   const [data, setData] = useState({ menu: [] });
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const elemMenu = {
-    id: data.menu.id, item: data.menu.item, precio: data.menu.precio, cantidad: data.menu.cantidad,
+
+  // const [producto, setProducto] = useState({
+  //   id: null,
+  //   item: null,
+  //   precio: null,
+  // });
+
+  const [pedido, setPedido] = useState([]);
+
+  const addPedido = (menu) => {
+    setPedido([{ ...menu, count: 1 }, ...pedido]);
   };
-  const [producto, setProducto] = useState(elemMenu);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +64,7 @@ const Desayuno = () => {
                 {data.menu.map((elem) => {
                   if (elem.categoría === 'desayuno') {
                     return (
-                      <button onClick={() => setProducto(producto)} key={elem.id} className="btn-menu color-four my-2" type="button">
+                      <button onClick={() => addPedido(elem)} key={elem.id} className="btn-menu color-four my-2" type="button">
                         {elem.item}
                         {' '}
                         s/.
@@ -69,7 +79,7 @@ const Desayuno = () => {
         </div>
         <div className="col-7">
           <div>
-            <Menulist producto={producto} />
+            <Menulist pedido={pedido} />
           </div>
         </div>
       </div>

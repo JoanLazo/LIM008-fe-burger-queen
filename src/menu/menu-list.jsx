@@ -8,9 +8,13 @@ import './menu.css';
 // import firebase from './config/config.js'
 // const db = firebase.firestore();
 
-const Menulist = (props) => {
-  const [count, setCount] = useState(0);
-  // const [pedido, setPedido] = useState(data);
+const Menulist = ({ pedido, setPedido }) => {
+  console.log(pedido);
+  const [count, setCount] = useState(1);
+  // const [pedido, setPedido] = useState([]);
+  // const addPedido = (id) => {
+  //   setPedido([...pedido], id);
+  // };
 
   return (
     <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
@@ -24,26 +28,22 @@ const Menulist = (props) => {
           </tr>
         </thead>
         <tbody className="text-center">
-          {props.data.menu.id === props.data.menu.id  ? (
-          <tr key={}>
-            <td>{}</td>
-            <td>{}</td>
-            <td>
-              <button className="btn-ico" onClick={() => setCount(count - 1)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
-              {' '}
-              {count}
-              <button className="btn-ico" onClick={() => setCount(count + 1)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675953-24f3c080-5890-11e9-8aae-0b9051a2051f.png" className="ico-menu-list" alt="más" /></button>
-
-            </td>
-            <td>
-              <button className="btn-ico" type="button"><img src="https://user-images.githubusercontent.com/44485081/55659563-e0045700-57c7-11e9-971e-d57e2b55ddf7.png" className="ico-menu-list" alt="logo" /></button>
-            </td>
-          </tr>
-          ) : (
-            <tr>
-              {/* <td colSpan={3}>No hay pedidos</td> */}
+          {pedido.map(e => (
+            <tr key={e.id}>
+              <td>{e.item}</td>
+              <td>{e.precio}</td>
+              <td>
+                <button className="btn-ico" onClick={() => setCount(count - 1)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
+                {' '}
+                {count}
+                <button className="btn-ico" onClick={() => setCount(count + 1)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675953-24f3c080-5890-11e9-8aae-0b9051a2051f.png" className="ico-menu-list" alt="más" /></button>
+              </td>
+              <td>
+                <button className="btn-ico" type="button"><img src="https://user-images.githubusercontent.com/44485081/55659563-e0045700-57c7-11e9-971e-d57e2b55ddf7.png" className="ico-menu-list" alt="logo" /></button>
+              </td>
             </tr>
-          )}
+          ))
+          }
         </tbody>
       </table>
       <h4 className="pl-2">Total : </h4>
