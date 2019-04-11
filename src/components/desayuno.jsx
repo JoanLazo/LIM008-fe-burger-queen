@@ -45,9 +45,6 @@ const Desayuno = () => {
     fetchData();
   }, []);
 
-  // const addPedido = (prod) => {
-  // };
-
 
   return (
     <div className="container">
@@ -79,7 +76,7 @@ const Desayuno = () => {
         </div>
         <div className="col-7">
           <div>
-            <Menulist pedido={pedido} />
+            <Menulist pedido={pedido} setPedido={setPedido} />
           </div>
         </div>
       </div>
