@@ -13,16 +13,13 @@ const Desayuno = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  // const [producto, setProducto] = useState({
-  //   id: null,
-  //   item: null,
-  //   precio: null,
-  // });
 
   const [pedido, setPedido] = useState([]);
 
   const addPedido = (menu) => {
-    setPedido([{ ...menu, count: 1 }, ...pedido]);
+    pedido.find(e => e.id === menu.id)
+      ? setPedido([...pedido])
+      : setPedido([{ ...menu, count: 1 }, ...pedido]);
   };
 
 
