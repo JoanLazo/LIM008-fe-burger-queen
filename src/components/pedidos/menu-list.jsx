@@ -3,30 +3,36 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import React from 'react';
-import './menu.css';
+import './menu-list.css';
 
 // import firebase from './config/config.js'
 // const db = firebase.firestore();
 
-const Menulist = ({ pedido, setPedido }) => {
+// eslint-disable-next-line react/prop-types
+const Menulist = ({ pedido, setPedido, totalCost }) => {
   console.log(pedido);
-  // console.log(setPedido);
-  // const [count, setCount] = useState(1);
-
   const addP = (prod, e) => {
     e.count += 1;
     setPedido([...prod]);
   };
 
   const restP = (prod, e) => {
-    e.count -= 1;
-    setPedido([...prod]);
+    if (e.count > 1) {
+      e.count -= 1;
+      setPedido([...prod]);
+    }
   };
 
   const deleteProd = (id) => {
     setPedido(pedido.filter(e => e.id !== id));
   };
+  const totalPrice = totalCost(pedido);
 
+  // const [pedidoUser, setPedidoUser] = useState([]);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    console.log(({ name, value }));
+  };
   return (
     <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
       <table className="pl-5 pr-5">
@@ -42,7 +48,7 @@ const Menulist = ({ pedido, setPedido }) => {
           {pedido.map(e => (
             <tr key={e.id}>
               <td>{e.item}</td>
-              <td>{e.precio}</td>
+              <td>{e.precio * e.count}</td>
               <td>
                 <button className="btn-ico" onClick={() => restP(pedido, e)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
                 {' '}
@@ -57,12 +63,17 @@ const Menulist = ({ pedido, setPedido }) => {
           }
         </tbody>
       </table>
-      <h4 className="pl-2">Total : </h4>
+      <h4 className="pl-5">
+        Total: 
+        {' '}
+        {'s/. '}
+        {totalPrice}
+      </h4>
       {' '}
       <span />
       <div className="flex-row">
-        <label htmlFor="input" className="mr-2 mt-3 pl-2">Cliente</label>
-        <input type="text" name="username" />
+        <label htmlFor="input" className="mr-2 mt-3 pl-5">Cliente</label>
+        <input type="text" name="username" value={pedido.username} onChange={handleInputChange} />
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center">
         <button type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
@@ -70,6 +81,5 @@ const Menulist = ({ pedido, setPedido }) => {
     </div>
   );
 };
-
 
 export default Menulist;

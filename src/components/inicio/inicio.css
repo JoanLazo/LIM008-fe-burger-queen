@@ -1,12 +1,11 @@
-
-  .burger-fondo {
+.burger-fondo {
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-attachment: fixed;
     margin: 0;   
     font-size: calc(10px + 2vmin);
     color: white;
-    background-image: url('../img/hamburguesa-vegana.jpg')
+    background-image: url('https://user-images.githubusercontent.com/44485081/56084793-16f8ef00-5dfe-11e9-88a9-ed154229d635.jpg')
    }
 
    .btn-menu-inicio {

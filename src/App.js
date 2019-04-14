@@ -11,7 +11,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Mesero from './components/mesero';
-import Inicio from './inicio/inicio';
+import Inicio from './components/inicio/inicio';
 // import Desayuno from './components/desayuno';
 // import Menulist from './menu/menu-list';
 

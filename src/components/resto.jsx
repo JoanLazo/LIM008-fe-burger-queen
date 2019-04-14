@@ -6,38 +6,14 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable react/jsx-indent */
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Menulist from '../menu/menu-list';
+import React from 'react';
+// import Menulist from './pedidos/menu-list';
 
-const Resto = () => {
-  const [data, setData] = useState({ menu: [] });
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-      try {
-        const result = await axios(
-          'https://joanlazo.github.io/LIM008-fe-burger-queen/src/data-menu/menu.json',
-        );
-
-        setData(result.data);
-      } catch (error) {
-        setIsError(true);
-      }
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
+const Resto = ({data, isError, isLoading, addPedido}) => {
   return (
 <div className="container">
     <div className="row">
-      <div className="col-5">
+      <div className="col-12">
       <h1>Resto del día</h1>
       <div>
       {isError && <div>Something went wrong ...</div>}
@@ -49,7 +25,7 @@ const Resto = () => {
         {data.menu.map((elem) => {
           if (elem.categoría === 'resto del día') {
             return (
-              <button key={elem.id} className="btn-menu color-four my-2" type="button">
+              <button key={elem.id} onClick={() => addPedido(elem)} className="btn-menu color-four my-2" type="button">
                 {elem.item}
                 {' '}
                 s/.
@@ -61,14 +37,9 @@ const Resto = () => {
         </div>
       )}
     </div>
-              </div>
-              <div className="col-7">
-                <div>
-                  <Menulist />
-                </div>
-              </div>
-        </div>
-        </div>
+   </div>
+  </div>
+</div>
   );
 };
 export default Resto;
