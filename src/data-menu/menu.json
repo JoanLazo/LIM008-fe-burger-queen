@@ -28,11 +28,11 @@
        "item": "Hamburguesa simple",
        "precio": 10,
        "categoría": "resto del día",
-       "tipo": {
-           "res": "res",
-           "pollo": "pollo",
-           "vegetariana": "vegetariana"
-       },
+       "tipo": [
+        "res",
+        "pollo",
+        "vegetariana"
+       ],
        "familia":"Hamburguesas"
    }, 
    {
@@ -40,11 +40,11 @@
     "item": "Hamburguesa doble",
     "precio": 15,
     "categoría": "resto del día",
-    "tipo": {
-        "res": "res",
-        "pollo": "pollo",
-        "vegetariana": "vegetariana"
-    },
+    "tipo": [
+        "res",
+        "pollo",
+        "vegetariana"
+    ],
     "familia":"Hamburguesas"
    },
    {
