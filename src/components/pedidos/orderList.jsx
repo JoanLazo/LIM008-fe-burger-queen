@@ -1,8 +1,8 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import './orderList.css';
+import PropTypes from 'prop-types';
 import firebase from '../../config/config';
 
 const Menulist = ({ pedido, setPedido, totalCost }) => {
@@ -75,12 +75,12 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
           }
         </tbody>
       </table>
-      <h4 className="pl-5">
+      <h6 className="pl-5">
         Total: 
         {' '}
         {'s/. '}
         {totalPrice}
-      </h4>
+      </h6>
       {' '}
       <span />
       <div className="flex-row">
@@ -94,4 +94,9 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
   );
 };
 
+Menulist.propTypes = {
+  pedido: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setPedido: PropTypes.func.isRequired,
+  totalCost: PropTypes.func.isRequired,
+};
 export default Menulist;

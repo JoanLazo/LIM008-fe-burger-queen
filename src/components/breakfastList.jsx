@@ -1,34 +1,32 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable consistent-return */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/jsx-one-expression-per-line */
-// eslint-disable-next-line import/no-unresolved
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Desayuno = ({data, isError, isLoading, addPedido}) => (
+const Desayuno = ({ data, isError, isLoading, addPedido }) => (
   <div className="container">
     <div className="row">
       <div className="col-12">
         <div>
-          {isError && <div>Something went wrong ...</div>}
+          {isError && <div data-testid="error-message">Something went wrong ...</div>}
 
           {isLoading ? (
-            <div>Loading ...</div>
+            <div data-testid="loading-message">Loading ...</div>
           ) : (
-            <div className="d-flex flex-column flex-nowrap">
+            <div>
               <h1>Desayuno</h1>
-              {data.menu.map((elem) => {
-                if (elem.categoría === 'desayuno') {
-                  return (
-                    <button onClick={() => addPedido(elem)} key={elem.id} className="btn-menu color-four my-2" type="button">
-                      {elem.item}
-                      {' '}
-                      s/.
-                      {elem.precio}
-                    </button>
-                  );
-                }
-              })}
+              <div data-testid="button-container" className="d-flex flex-column flex-nowrap">
+                {data.menu.map((elem) => {
+                  if (elem.categoria === 'desayuno') {
+                    return (
+                      <button data-testid={`${elem.id}-button`} onClick={() => addPedido(elem)} key={elem.id} className="btn-menu color-four my-2" type="button">
+                        {elem.item}
+                        {' '}
+                        s/.
+                        {elem.precio}
+                      </button>
+                    );
+                  }
+                })}
+              </div>
             </div>
           )}
         </div>
@@ -36,5 +34,17 @@ const Desayuno = ({data, isError, isLoading, addPedido}) => (
     </div>
   </div>
 );
+
+Desayuno.propTypes = {
+  data: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.object({
+    id: PropTypes.number,
+    item: PropTypes.string,
+    precio: PropTypes.number,
+    categoria: PropTypes.string,
+  }))).isRequired,
+  isError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  addPedido: PropTypes.func.isRequired,
+};
 
 export default Desayuno;

@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-closing-bracket-location */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-closing-tag-location */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Desayuno from './breakfastList';
@@ -16,9 +12,11 @@ const Mesero = () => {
   const [verDesayuno, setVerDesayuno] = useState(false);
   const [verResto, setVerResto] = useState(false);
   const addPedido = (menu) => {
-    pedido.find(e => e.id === menu.id)
-      ? setPedido([...pedido])
-      : setPedido([{ ...menu, count: 1 }, ...pedido]);
+    if (pedido.find(e => e.id === menu.id)) {
+      setPedido([...pedido]);
+    } else {
+      setPedido([{ ...menu, count: 1 }, ...pedido]);
+    }
   };
   const totalCost = (menu) => {
     // console.log(menu);
@@ -34,7 +32,7 @@ const Mesero = () => {
         const result = await axios(
           'https://joanlazo.github.io/LIM008-fe-burger-queen/src/data-menu/menu.json',
         );
-        console.log(result);
+        // console.log(result);
         setData(result.data);
       } catch (error) {
         setIsError(true);
@@ -54,7 +52,7 @@ const Mesero = () => {
         <nav>
           <div className="d-flex flex-row justify-content-around py-3 color-height">
             <button onClick={() => setVerDesayuno(!verDesayuno)} className="btn-menu color-height color-white" type="button">
-            DESAYUNO
+              DESAYUNO
             </button>
             <button onClick={() => setVerResto(!verResto)} className="btn-menu color-height color-white" type="button">
             RESTO DEL DÍA
@@ -79,7 +77,8 @@ const Mesero = () => {
                   data={data}
                   isError={isError}
                   isLoading={isLoading}
-                  addPedido={addPedido} />
+                  addPedido={addPedido}
+                />
               )}
             </div>
           </div>

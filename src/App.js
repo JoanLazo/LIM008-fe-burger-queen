@@ -1,10 +1,8 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable linebreak-style */
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Mesero from './components/mesero';
-import Inicio from './components/inicio/inicio';
+import Inicio from './components/Inicio';
 
 const App = () => (
   <BrowserRouter>

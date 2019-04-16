@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './inicio.css';
@@ -7,9 +5,7 @@ import './inicio.css';
 const Inicio = () => (
   <div className="burger-fondo">
     <div className="oscuro">
-      <h1 className="py-5 text-center text-title">
-           BURGER QUEEN
-      </h1>
+      <h1 className="py-5 text-center text-title">BURGER QUEEN</h1>
       <div className="container">
         <div className="row">
           <div className="col-12">

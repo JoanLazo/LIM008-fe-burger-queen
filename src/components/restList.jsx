@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable linebreak-style */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Resto = ({data, isError, isLoading, addPedido}) => {
+const Resto = ({ data, isError, isLoading, addPedido }) => {
   return (
     <div className="container">
       <div className="row">
@@ -16,7 +15,7 @@ const Resto = ({data, isError, isLoading, addPedido}) => {
             ) : (
               <div className="d-flex flex-column flex-nowrap">
                 {data.menu.map((elem) => {
-                  if (elem.categoría === 'resto del día') {
+                  if (elem.categoria === 'resto del día') {
                     return (
                       <button key={elem.id} onClick={() => addPedido(elem)} className="btn-menu color-four my-2" type="button">
                         {elem.item}
@@ -34,5 +33,11 @@ const Resto = ({data, isError, isLoading, addPedido}) => {
       </div>
     </div>
   );
+};
+Resto.propTypes = {
+  data: PropTypes.objectOf(PropTypes.array).isRequired,
+  isError: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  addPedido: PropTypes.func.isRequired,
 };
 export default Resto;
