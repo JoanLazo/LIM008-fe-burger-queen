@@ -4,10 +4,9 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Desayuno from './desayuno';
-import Resto from './resto';
-import Menulist from './pedidos/menu-list';
-
+import Desayuno from './breakfastList';
+import Resto from './restList';
+import Menulist from './pedidos/orderList';
 
 const Mesero = () => {
   const [data, setData] = useState({ menu: [] });
@@ -24,9 +23,7 @@ const Mesero = () => {
   const totalCost = (menu) => {
     // console.log(menu);
     const precio = menu.map(ele => ele.precio * ele.count);
-    // console.log(precio);
     const total = precio.reduce((a, b) => a + b, 0);
-    // console.log(total);
     return total;
   };
   useEffect(() => {
@@ -37,7 +34,7 @@ const Mesero = () => {
         const result = await axios(
           'https://joanlazo.github.io/LIM008-fe-burger-queen/src/data-menu/menu.json',
         );
-
+        console.log(result);
         setData(result.data);
       } catch (error) {
         setIsError(true);

@@ -2,11 +2,8 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/jsx-one-expression-per-line */
-
-import React from 'react';
-// import axios from 'axios';
 // eslint-disable-next-line import/no-unresolved
-// import Menulist from './pedidos/menu-list';
+import React from 'react';
 
 const Desayuno = ({data, isError, isLoading, addPedido}) => (
   <div className="container">

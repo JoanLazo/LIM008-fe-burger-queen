@@ -1,14 +1,10 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-
 import React, { useState } from 'react';
-import './menu-list.css';
+import './orderList.css';
 import firebase from '../../config/config';
-// import firebase from './config/config.js'
-// const db = firebase.firestore();
 
-// eslint-disable-next-line react/prop-types
 const Menulist = ({ pedido, setPedido, totalCost }) => {
   // console.log(pedido);
   const addP = (prod, e) => {
@@ -16,7 +12,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
     setPedido([...prod]);
   };
 
-  const restP = (prod, e) => {
+  const removeP = (prod, e) => {
     if (e.count > 1) {
       e.count -= 1;
       setPedido([...prod]);
@@ -29,7 +25,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
   const totalPrice = totalCost(pedido);
 
   const db = firebase.firestore();
-  const setPedidoUser = (userName, userPedido, priceTotal) => {
+  const setOrderUser = (userName, userPedido, priceTotal) => {
     db.collection('Pedidos').doc().set({
       userName,
       userPedido,
@@ -48,7 +44,6 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
     const { value } = event.target;
     setInputValue(inputValue);
     setInputValue(value);
-    console.log(inputValue);
   };
   return (
     <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
@@ -67,7 +62,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
               <td>{e.item}</td>
               <td>{e.precio * e.count}</td>
               <td>
-                <button className="btn-ico" onClick={() => restP(pedido, e)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
+                <button className="btn-ico" onClick={() => removeP(pedido, e)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
                 {' '}
                 {e.count}
                 <button className="btn-ico" onClick={() => addP(pedido, e)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675953-24f3c080-5890-11e9-8aae-0b9051a2051f.png" className="ico-menu-list" alt="más" /></button>
@@ -93,7 +88,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
         <input type="text" name="username" value={pedido.username} onChange={handleInputChange} />
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center">
-        <button onClick={() => setPedidoUser(inputValue, pedido, totalPrice)} type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
+        <button onClick={() => setOrderUser(inputValue, pedido, totalPrice)} type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
       </div>
     </div>
   );
