@@ -2,15 +2,15 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React from 'react';
+import React, { useState }  from 'react';
 import './menu-list.css';
-
+import firebase from '../../config/config';
 // import firebase from './config/config.js'
 // const db = firebase.firestore();
 
 // eslint-disable-next-line react/prop-types
 const Menulist = ({ pedido, setPedido, totalCost }) => {
-  console.log(pedido);
+  // console.log(pedido);
   const addP = (prod, e) => {
     e.count += 1;
     setPedido([...prod]);
@@ -28,10 +28,27 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
   };
   const totalPrice = totalCost(pedido);
 
-  // const [pedidoUser, setPedidoUser] = useState([]);
+  const db = firebase.firestore();
+  const setPedidoUser = (userName, userPedido, priceTotal) => {
+    db.collection('Pedidos').doc().set({
+      userName,
+      userPedido,
+      priceTotal,
+      userDate: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+      .then(() => {
+        console.log('Document successfully written!');
+      })
+      .catch((error) => {
+        console.error('Error writing document: ', error);
+      });
+  };
+  const [inputValue, setInputValue] = useState('');
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    console.log(({ name, value }));
+    const { value } = event.target;
+    setInputValue(inputValue);
+    setInputValue(value);
+    console.log(inputValue);
   };
   return (
     <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
@@ -76,7 +93,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
         <input type="text" name="username" value={pedido.username} onChange={handleInputChange} />
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center">
-        <button type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
+        <button onClick={() => setPedidoUser(inputValue, pedido, totalPrice)} type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
       </div>
     </div>
   );

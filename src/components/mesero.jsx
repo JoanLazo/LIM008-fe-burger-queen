@@ -7,11 +7,11 @@ import axios from 'axios';
 import Desayuno from './desayuno';
 import Resto from './resto';
 import Menulist from './pedidos/menu-list';
-import firebase from '../config/config';
+
 
 const Mesero = () => {
   const [data, setData] = useState({ menu: [] });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [pedido, setPedido] = useState([]);
   const [verDesayuno, setVerDesayuno] = useState(false);
@@ -48,17 +48,6 @@ const Mesero = () => {
     fetchData();
   }, []);
 
-  const db = firebase.firestore();
-  useEffect(() => {
-    db.collection('pedidos').doc(pedido.username).set(...pedido)
-      .then(() => {
-        console.log('Document successfully written!');
-      })
-      .catch((error) => {
-        console.error('Error writing document: ', error);
-      });
-  });
-  
   return (
     <div>
       <div className="container-all">

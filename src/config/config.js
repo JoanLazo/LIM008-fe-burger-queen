@@ -3,7 +3,9 @@
 // Initialize Firebase
 // Firebase App is always required and must be first
 // eslint-disable-next-line import/no-unresolved
-import firebase from 'firebase';
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
 
 export const config = {
   apiKey: 'AIzaSyCjxok38nQggyPiI3U0hiAuuMybHu6TpDM',
