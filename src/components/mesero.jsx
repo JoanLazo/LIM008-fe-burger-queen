@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Desayuno from './breakfastList';
-import Resto from './restList';
-import Menulist from './pedidos/orderList';
+import BreakfastList from './BreakfastList';
+import RestList from './RestList';
+import OrderList from './pedidos/OrderList';
 
 const Mesero = () => {
   const [data, setData] = useState([]);
+  console.log(data);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [pedido, setPedido] = useState([]);
-  const [verDesayuno, setVerDesayuno] = useState(false);
+  const [verDesayuno, setVerDesayuno] = useState(true);
   const [verResto, setVerResto] = useState(false);
   const addPedido = (menu) => {
     if (pedido.find(e => e.id === menu.id)) {
@@ -63,17 +64,18 @@ const Mesero = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-5">
+          <div className="col-4">
             <div className="d-flex flex-column flex-nowrap">
               {verDesayuno && (
-              <Desayuno
+              <BreakfastList
                 data={data}
                 isError={isError}
                 isLoading={isLoading}
-                addPedido={addPedido} />
+                addPedido={addPedido}
+              />
               )}
               {verResto && (
-                <Resto
+                <RestList
                   data={data}
                   isError={isError}
                   isLoading={isLoading}
@@ -82,13 +84,13 @@ const Mesero = () => {
               )}
             </div>
           </div>
-          <div className="col-7">
+          <div className="col-8">
             <div>
-              <Menulist
-                data={data}
+              <OrderList
                 pedido={pedido}
                 setPedido={setPedido}
-                totalCost={totalCost} />
+                totalCost={totalCost}
+              />
             </div>
           </div>
         </div>

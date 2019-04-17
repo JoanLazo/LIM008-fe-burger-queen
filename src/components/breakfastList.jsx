@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Desayuno = ({ data, isError, isLoading, addPedido }) => (
+const BreakfastList = ({ data, isError, isLoading, addPedido }) => (
   <div className="container">
     <div className="row">
       <div className="col-12">
@@ -17,12 +17,14 @@ const Desayuno = ({ data, isError, isLoading, addPedido }) => (
                 {data.map((elem) => {
                   if (elem.categoria === 'desayuno') {
                     return (
-                      <button data-testid={`${elem.id}-button`} onClick={() => addPedido(elem)} key={elem.id} className="btn-menu color-four my-2" type="button">
-                        {elem.item}
-                        {' '}
-                        s/.
-                        {elem.precio}
-                      </button>
+                      <div data-testid={`${elem.id}-button`} key={elem.id} className="card my-2 width-10">
+                        <img className="card-img-top" src={elem.url} alt="Card" />
+                        <div className="card-body">
+                          <h5 className="card-title text-center">{elem.item}</h5>
+                          <p className="card-text text-center">s/.{elem.precio}</p>
+                          <button onClick={() => addPedido(elem)} className="btn-menu color-four my-2 ml-2" type="button">Agregar al pedido</button>
+                        </div>
+                      </div>
                     );
                   }
                 })}
@@ -35,16 +37,11 @@ const Desayuno = ({ data, isError, isLoading, addPedido }) => (
   </div>
 );
 
-Desayuno.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    item: PropTypes.string,
-    precio: PropTypes.number,
-    categoria: PropTypes.string,
-  })).isRequired,
+BreakfastList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   isError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   addPedido: PropTypes.func.isRequired,
 };
 
-export default Desayuno;
+export default BreakfastList;

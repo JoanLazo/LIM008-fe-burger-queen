@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Mesero from './components/mesero';
-import Inicio from './components/Inicio';
+import Mesero from './components/Mesero';
+import Inicio from './components/Inicio/index';
 
 const App = () => (
   <BrowserRouter>

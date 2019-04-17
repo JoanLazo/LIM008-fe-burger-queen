@@ -5,7 +5,7 @@ import './orderList.css';
 import PropTypes from 'prop-types';
 import firebase from '../../config/config';
 
-const Menulist = ({ pedido, setPedido, totalCost }) => {
+const OrderList = ({ pedido, setPedido, totalCost }) => {
   // console.log(pedido);
   const addP = (prod, e) => {
     e.count += 1;
@@ -46,7 +46,7 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
     setInputValue(value);
   };
   return (
-    <div className="d-flex flex-column my-5 flex-nowrap color-white-b">
+    <section className="d-flex flex-column my-5 flex-nowrap color-white-b">
       <table className="pl-5 pr-5">
         <thead>
           <tr>
@@ -90,13 +90,13 @@ const Menulist = ({ pedido, setPedido, totalCost }) => {
       <div className="d-flex flex-row justify-content-center align-items-center">
         <button onClick={() => setOrderUser(inputValue, pedido, totalPrice)} type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
       </div>
-    </div>
+    </section>
   );
 };
 
-Menulist.propTypes = {
+OrderList.propTypes = {
   pedido: PropTypes.arrayOf(PropTypes.object).isRequired,
   setPedido: PropTypes.func.isRequired,
   totalCost: PropTypes.func.isRequired,
 };
-export default Menulist;
+export default OrderList;

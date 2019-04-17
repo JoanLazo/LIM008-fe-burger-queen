@@ -1,31 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Resto = ({ data, isError, isLoading, addPedido }) => {
+const RestList = ({ data, isError, isLoading, addPedido }) => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-12">
           <h1>Resto del día</h1>
           <div>
-            {isError && <div>Something went wrong ...</div>}
+            {isError && <div data-testid="error-message-rest">Something went wrong ...</div>}
 
             {isLoading ? (
-              <div>Loading ...</div>
+              <div data-testid="loading-message-rest">Loading ...</div>
             ) : (
-              <div className="d-flex flex-column flex-nowrap">
-                {data.map((elem) => {
-                  if (elem.categoria === 'resto del día') {
-                    return (
-                      <button key={elem.id} onClick={() => addPedido(elem)} className="btn-menu color-four my-2" type="button">
-                        {elem.item}
-                        {' '}
-                         s/.
-                        {elem.precio}
-                      </button>
-                    );
-                  }
-                })}
+              <div>
+                <div data-testid="button-container-rest" className="d-flex flex-column flex-nowrap">
+                  {data.map((elem) => {
+                    if (elem.categoria === 'resto del día') {
+                      return (
+                        <div data-testid={`${elem.id}-button-rest`} key={elem.id} className="card my-2 width-10">
+                          <img className="card-img-top" src={elem.url} alt="Card" />
+                          <div className="card-body">
+                            <h5 className="card-title text-center">{elem.item}</h5>
+                            <p className="card-text text-center">s/.{elem.precio}</p>
+                            <button onClick={() => addPedido(elem)} className="btn-menu color-four my-2 text-center ml-1" type="button">Agregar al pedido</button>
+                          </div>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -34,15 +38,10 @@ const Resto = ({ data, isError, isLoading, addPedido }) => {
     </div>
   );
 };
-Resto.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    item: PropTypes.string,
-    precio: PropTypes.number,
-    categoria: PropTypes.string,
-  })).isRequired,
+RestList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   isError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   addPedido: PropTypes.func.isRequired,
 };
-export default Resto;
+export default RestList;
