@@ -14,7 +14,7 @@ const Resto = ({ data, isError, isLoading, addPedido }) => {
               <div>Loading ...</div>
             ) : (
               <div className="d-flex flex-column flex-nowrap">
-                {data.menu.map((elem) => {
+                {data.map((elem) => {
                   if (elem.categoria === 'resto del día') {
                     return (
                       <button key={elem.id} onClick={() => addPedido(elem)} className="btn-menu color-four my-2" type="button">
@@ -35,7 +35,12 @@ const Resto = ({ data, isError, isLoading, addPedido }) => {
   );
 };
 Resto.propTypes = {
-  data: PropTypes.objectOf(PropTypes.array).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    item: PropTypes.string,
+    precio: PropTypes.number,
+    categoria: PropTypes.string,
+  })).isRequired,
   isError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   addPedido: PropTypes.func.isRequired,

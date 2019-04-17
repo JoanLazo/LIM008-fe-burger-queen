@@ -5,7 +5,7 @@ import Resto from './restList';
 import Menulist from './pedidos/orderList';
 
 const Mesero = () => {
-  const [data, setData] = useState({ menu: [] });
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [pedido, setPedido] = useState([]);
