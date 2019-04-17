@@ -4,28 +4,28 @@
          "item": "Café americano",
          "precio": 5,
         "categoria": "desayuno",
-        "url:" "http://akipan.es/wp-content/uploads/2016/05/cafe-americano.jpg"
+        "url": "http://akipan.es/wp-content/uploads/2016/05/cafe-americano.jpg"
     }, 
    {
       "id": "2",
       "item": "Café con leche",
       "precio": 7,
       "categoria": "desayuno",
-      "url:" "http://myvegieplace.com/wp-content/uploads/2015/05/cafe-leche.jpg"
+      "url": "http://myvegieplace.com/wp-content/uploads/2015/05/cafe-leche.jpg"
    },
    {
        "id": "3",
        "item": "Sandwich de jamón y queso",
        "precio": 10,
        "categoria": "desayuno",
-       "url:" "https://static.menutabapp.com/img/original/2014/09/08/372305e501498239691671bb7e3f21fc.jpeg"
+       "url": "https://static.menutabapp.com/img/original/2014/09/08/372305e501498239691671bb7e3f21fc.jpeg"
    },
    {
        "id": "4",
        "item": "Jugo de frutas natural",
        "precio": 7,
        "categoria": "desayuno",
-       "url:" "https://cdn.aarp.net/content/dam/aarp/food/recipes/2016/09/1140-watermelon-lime-smoothie-esp.imgcache.rev8463e5bbc79e038972b0ed1e1e8030db.web.jpg"
+       "url": "https://cdn.aarp.net/content/dam/aarp/food/recipes/2016/09/1140-watermelon-lime-smoothie-esp.imgcache.rev8463e5bbc79e038972b0ed1e1e8030db.web.jpg"
    },
    {
     "id": "5",
@@ -38,7 +38,7 @@
         "vegetariana"
        ],
        "familia":"Hamburguesas",
-       "url:" "https://s.yimg.com/uu/api/res/1.2/xkHdF.vAke4Y8KOmORLLQg--~B/aD0xNDQzO3c9MjAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/http://media.zenfs.com/en_us/News/ap_webfeeds/5c671fc3dc10ae1c3b0f6a7067008993.jpg"
+       "url": "https://s.yimg.com/uu/api/res/1.2/xkHdF.vAke4Y8KOmORLLQg--~B/aD0xNDQzO3c9MjAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/http://media.zenfs.com/en_us/News/ap_webfeeds/5c671fc3dc10ae1c3b0f6a7067008993.jpg"
    }, 
    {
     "id": "6",
@@ -51,7 +51,7 @@
         "vegetariana"
     ],
     "familia":"Hamburguesas",
-    "url:" "https://img.pystatic.com/products/404245-5250a435-27e9-4885-956f-1349b63d4210.jpg"
+    "url": "https://img.pystatic.com/products/404245-5250a435-27e9-4885-956f-1349b63d4210.jpg"
    },
    {
     "id": "7",
@@ -59,7 +59,7 @@
     "precio": 5,
     "categoria": "resto del día",
     "familia":"Acompañamientos",
-    "url:" "https://www.eltiempo.com.ec/media/k2/items/cache/ca83e4aefd7db4444c418726332b00a3_M.jpg"
+    "url": "https://www.eltiempo.com.ec/media/k2/items/cache/ca83e4aefd7db4444c418726332b00a3_M.jpg"
    },
    {
     "id": "8",
@@ -67,7 +67,7 @@
     "precio": 5,
     "categoria": "resto del día",
     "familia":"Acompañamientos",
-    "url:" "https://www.comedera.com/wp-content/uploads/2018/07/aros-de-cebolla.jpg"
+    "url": "https://www.comedera.com/wp-content/uploads/2018/07/aros-de-cebolla.jpg"
    },
    {
     "id": "9",
@@ -75,7 +75,7 @@
     "precio": 5,
     "categoria": "resto del día",
     "familia":"Para tomar",
-    "url:" "http://sushicr.com/cr/images/sushitogo_imagenes/agua2.jpg"
+    "url": "http://sushicr.com/cr/images/sushitogo_imagenes/agua2.jpg"
    },
    {
     "id": "10",
@@ -83,7 +83,7 @@
     "precio": 7,
     "categoria": "resto del día",
     "familia":"Para tomar",
-    "url:" "https://plazavea.vteximg.com.br/arquivos/ids/170546-1000-1000/130990.jpg?v=635774868407970000"
+    "url": "https://plazavea.vteximg.com.br/arquivos/ids/170546-1000-1000/130990.jpg?v=635774868407970000"
    },
    {
     "id": "11",
@@ -91,7 +91,7 @@
     "precio": 7,
     "categoria": "resto del día",
     "familia":"Para tomar",
-    "url:" "https://jumbocolombiafood.vteximg.com.br/arquivos/ids/188559-1000-1000/7702535001752COCA-COLA--CLASICA-X-600-ML.jpg?v=636144861663370000"
+    "url": "https://jumbocolombiafood.vteximg.com.br/arquivos/ids/188559-1000-1000/7702535001752COCA-COLA--CLASICA-X-600-ML.jpg?v=636144861663370000"
    },
    {
     "id": "12",
@@ -99,7 +99,7 @@
     "precio": 10,
     "categoria": "resto del día",
     "familia":"Para tomar",
-    "url:" "https://vivanda.vteximg.com.br/arquivos/ids/163381-1000-1000/20040552.jpg?v=636137747575470000"
+    "url": "https://vivanda.vteximg.com.br/arquivos/ids/163381-1000-1000/20040552.jpg?v=636137747575470000"
    },
    {
     "id": "13",
@@ -107,7 +107,7 @@
     "precio": 1,
     "categoria": "resto del día",
     "familia":"adicional",
-    "url:" "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG_YzaWBrH9wPy2BmZ5Tonx0zobsScOqPJ13wYxx1TuPm74_D3"
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG_YzaWBrH9wPy2BmZ5Tonx0zobsScOqPJ13wYxx1TuPm74_D3"
     },
     {
     "id": "14",
@@ -115,6 +115,6 @@
     "precio": 1,
     "categoria": "resto del día",
     "familia":"adicional",
-    "url:" "https://valenciagastronomica.com/wp-content/uploads/2016/04/curiosidades-queso-1.jpg"
+    "url": "https://valenciagastronomica.com/wp-content/uploads/2016/04/curiosidades-queso-1.jpg"
    } 
 ]
