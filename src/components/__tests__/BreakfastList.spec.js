@@ -28,10 +28,10 @@ describe('OrderList', () => {
     const data = {
       menu: [
         {
-          id: 1, item: 'item 1', precio: 0, categoría: 'desayuno',
+          id: 1, item: 'item 1', precio: 0, categoria: 'desayuno',
         },
         {
-          id: 2, item: 'item 2', precio: 0, categoría: 'desayuno',
+          id: 2, item: 'item 2', precio: 0, categoria: 'desayuno',
         },
       ],
     };

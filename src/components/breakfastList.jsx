@@ -36,7 +36,7 @@ const Desayuno = ({ data, isError, isLoading, addPedido }) => (
 );
 
 Desayuno.propTypes = {
-  data: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.object({
+  data: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     item: PropTypes.string,
     precio: PropTypes.number,
