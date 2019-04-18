@@ -64,7 +64,7 @@ const Mesero = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-4">
+          <div className="col-5">
             <div className="d-flex flex-column flex-nowrap">
               {verDesayuno && (
               <BreakfastList
@@ -84,7 +84,7 @@ const Mesero = () => {
               )}
             </div>
           </div>
-          <div className="col-8">
+          <div className="col-7">
             <div>
               <OrderList
                 pedido={pedido}
