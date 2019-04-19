@@ -46,7 +46,7 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
     setInputValue(value);
   };
   return (
-    <section className="d-flex flex-column my-5 flex-nowrap color-white-b">
+    <section className="d-flex flex-column my-5 py-5 flex-nowrap color-white-b py-5 pedido">
       <table className="pl-5 pr-5">
         <thead>
           <tr>
@@ -59,7 +59,7 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
         <tbody className="text-center">
           {pedido.map(e => (
             <tr key={e.id}>
-              <td>{e.item}</td>
+              <td className="card-title">{e.item}</td>
               <td>{e.precio * e.count}</td>
               <td>
                 <button className="btn-ico" onClick={() => removeP(pedido, e)} type="button"><img src="https://user-images.githubusercontent.com/44485081/55675961-40f76200-5890-11e9-97c8-71271a02e4db.png" className="ico-menu-list" alt="menos" /></button>
@@ -75,7 +75,7 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
           }
         </tbody>
       </table>
-      <h6 className="pl-5">
+      <h6 className="pl-5 mt-3">
         Total: 
         {' '}
         {'s/. '}
@@ -85,10 +85,10 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
       <span />
       <div className="flex-row">
         <label htmlFor="input" className="mr-2 mt-3 pl-5">Cliente</label>
-        <input type="text" name="username" value={pedido.username} onChange={handleInputChange} />
+        <input type="text" name="username" value={pedido.username} onChange={handleInputChange} className="input-log" />
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center">
-        <button onClick={() => setOrderUser(inputValue, pedido, totalPrice)} type="button" className="btn btn-primary mt-2 pl-2 mb-3 justify-content-center align-items-center">Enviar a cocina</button>
+        <button onClick={() => setOrderUser(inputValue, pedido, totalPrice)} type="button" className="btn-enviar color-one mt-3 mb-3 color-white text-center">Enviar a cocina</button>
       </div>
     </section>
   );

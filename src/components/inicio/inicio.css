@@ -1,3 +1,4 @@
+
 .burger-fondo {
     min-height: 100vh;
     background-size: 100vw 100vh;
@@ -5,20 +6,110 @@
     margin: 0;   
     font-size: calc(10px + 2vmin);
     color: white;
-    background-image: url('https://user-images.githubusercontent.com/44485081/56084793-16f8ef00-5dfe-11e9-88a9-ed154229d635.jpg')
+    background-image: url('https://user-images.githubusercontent.com/44485081/56400455-98df8280-6219-11e9-85d4-f6b43bbc36ef.jpg')
    }
-
+   .box {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    padding: 10px 30px;
+    margin-top: 50px;
+    border-radius: 7px;
+    font-size: 20px;
+  }
+  .pedido {
+    border-radius: 10px;
+    border: #DB0404 solid 3px;
+  }
    .btn-menu-inicio {
-     padding: 20px;
+     padding: 10px 50px;
      border-radius: 10px;
+     margin-top: 20px;
+     margin-bottom: 10px;
      border: none;
-     font-size: 25px;
+     font-size: 30px;
+     text-align: center;
      margin-top: 15%;
    }
    .oscuro{
     min-height: 100vh;
-     background-color: rgba(13, 14, 13, 0.575);
+     background-color: rgba(251, 255, 251, 0);
    }
    .text-title{
-    font-size: 50px;
+    font-size: 100px;
+  }
+  .img-logo{
+    width: 150px;
+    height: 150px;
+  }
+  .img-card {
+    display: flex;
+    width: 133px;
+    height: 100px;
+  }
+  @media (min-width:769px){
+    .img-card {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media (max-width:1024px) and (min-width:768px){
+    .img-logo {
+      width: 400px;
+      height: 400px;
+    }
+    .box {
+      width: 300px;
+      height: 400px;
+      margin: auto;
+      padding: 10px 30px;
+      margin-top: 45%;
+      border-radius: 7px;
+      font-size: 20px;
+    }
+    .btn-menu-inicio {
+      padding: 20px 100px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border: none;
+      font-size: 40px;
+      text-align: center;
+      margin-top: 15%;
+    }
+    .img-card {
+      display: flex;
+      width: 133px;
+      height: 100px;
+    }
+  }
+  @media (max-width: 1400px) and (min-width:1366px)  {
+    .img-logo {
+      width: 300px;
+      height: 300px;
+    }
+    .box {
+      width: 300px;
+      height: 400px;
+      margin: auto;
+      padding: 10px 30px;
+      margin-top: 25%;
+      border-radius: 7px;
+      font-size: 20px;
+    }
+    .btn-menu-inicio {
+      padding: 20px 70px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border: none;
+      font-size: 40px;
+      text-align: center;
+      margin-top: 15%;
+    }
+    .img-card {
+      width: 164px;
+      height: 100px;
+    }
   }

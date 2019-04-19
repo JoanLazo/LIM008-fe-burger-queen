@@ -6,7 +6,7 @@ import OrderList from './pedidos/OrderList';
 
 const Mesero = () => {
   const [data, setData] = useState([]);
-  console.log(data);
+  // console.log(data);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [pedido, setPedido] = useState([]);
@@ -63,9 +63,9 @@ const Mesero = () => {
       </div>
 
       <div className="container">
-        <div className="row">
-          <div className="col-5">
-            <div className="d-flex flex-column flex-nowrap">
+        <div className="row flex-column flex-md-row">
+          <div className="col-6">
+            <div className="d-flex">
               {verDesayuno && (
               <BreakfastList
                 data={data}
@@ -84,7 +84,7 @@ const Mesero = () => {
               )}
             </div>
           </div>
-          <div className="col-7">
+          <div className="col-6">
             <div>
               <OrderList
                 pedido={pedido}

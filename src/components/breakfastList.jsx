@@ -2,37 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BreakfastList = ({ data, isError, isLoading, addPedido }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-12">
-        <div>
-          {isError && <div data-testid="error-message">Something went wrong ...</div>}
+  <div>
+    <div>
+      {isError && <div data-testid="error-message">Something went wrong ...</div>}
 
-          {isLoading ? (
-            <div data-testid="loading-message">Loading ...</div>
-          ) : (
-            <div>
-              <h1>Desayuno</h1>
-              <div data-testid="button-container" className="d-flex flex-column flex-nowrap">
-                {data.map((elem) => {
-                  if (elem.categoria === 'desayuno') {
-                    return (
-                      <div data-testid={`${elem.id}-button`} key={elem.id} className="card my-2 width-10">
-                        <img className="card-img-top" src={elem.url} alt="Card" />
-                        <div className="card-body">
-                          <h5 className="card-title text-center">{elem.item}</h5>
-                          <p className="card-text text-center">s/.{elem.precio}</p>
-                          <button onClick={() => addPedido(elem)} className="btn-menu color-four my-2 ml-2" type="button">Agregar al pedido</button>
-                        </div>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
-          )}
+      {isLoading ? (
+        <div data-testid="loading-message">Loading ...</div>
+      ) : (
+        <div>
+          <h1 className="my-5">Desayuno</h1>
+          <div data-testid="button-container" className="card-columns">
+            {data.map((elem) => {
+              if (elem.categoria === 'desayuno') {
+                return (
+                  <div data-testid={`${elem.id}-button`} key={elem.id} className="card my-2">
+                    <img className="card-img-top" src={elem.url} alt="Card" />
+                    <div className="card-body">
+                      <h5 className="card-title text-center">{elem.item}</h5>
+                      <p className="card-text text-center">s/.{elem.precio}</p>
+                      <button onClick={() => addPedido(elem)} className="btn-ordenar justify-content-center align-items-center color-five color-white" type="button">Ordenar</button>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   </div>
 );
