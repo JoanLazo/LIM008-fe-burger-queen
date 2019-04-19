@@ -6,14 +6,14 @@
     margin: 0;   
     font-size: calc(10px + 2vmin);
     color: white;
-    background-image: url('https://user-images.githubusercontent.com/44485081/56400455-98df8280-6219-11e9-85d4-f6b43bbc36ef.jpg')
+    background-image: url('https://user-images.githubusercontent.com/44485081/56440154-31274700-62ae-11e9-9e3f-310c6316b7ec.jpg')
    }
    .box {
     width: 300px;
     height: 400px;
     margin: auto;
     padding: 10px 30px;
-    margin-top: 50px;
+    margin-top: 100px;
     border-radius: 7px;
     font-size: 20px;
   }
@@ -42,31 +42,61 @@
     width: 150px;
     height: 150px;
   }
+  .img-nav{
+    width: 70px;
+    height: 60px;
+  }
   .img-card {
     display: flex;
     width: 133px;
     height: 100px;
   }
-  @media (min-width:769px){
-    .img-card {
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  @media (max-width:1024px) and (min-width:768px){
+  @media (max-width: 768px) and (min-width:420px)  {
     .img-logo {
-      width: 400px;
-      height: 400px;
+      width: 150px;
+      height: 150px;
     }
     .box {
+      margin-top: 30%;
+    }
+    .btn-menu-inicio {
+      padding: 20px 50px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border: none;
+      font-size: 30px;
+      text-align: center;
+      margin-top: 15%;
+    }
+    .img-card {
+      width: 164px;
+      height: 100px;
+    }
+    .img-salida{
+      margin-left: 350px;
+    }
+    .img-nav{
+      width: 50px;
+      height: 50px;
+    }
+  .title{
+    font-size: 20px;
+  }
+  .circulo{
+    border-radius: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #ffffff;
+  }
+  }
+  @media (min-width:770px){
+    .img-logo {
       width: 300px;
-      height: 400px;
-      margin: auto;
-      padding: 10px 30px;
-      margin-top: 45%;
-      border-radius: 7px;
-      font-size: 20px;
+      height: 300px;
+    }
+    .box {
+      margin-top: 5%;
     }
     .btn-menu-inicio {
       padding: 20px 100px;
@@ -83,23 +113,29 @@
       width: 133px;
       height: 100px;
     }
+    .img-salida{
+      margin-left: 380px;
+    }
+    .title{
+      font-size: 20px;
+    }
+    .circulo{
+      border-radius: 100%;
+      padding-left: 60px;
+      padding-right: 60px;
+      background: #ffffff;
+    }
   }
-  @media (max-width: 1400px) and (min-width:1366px)  {
+  @media (max-width:1365px) and (min-width:1024px)  {
     .img-logo {
       width: 300px;
       height: 300px;
     }
     .box {
-      width: 300px;
-      height: 400px;
-      margin: auto;
-      padding: 10px 30px;
-      margin-top: 25%;
-      border-radius: 7px;
-      font-size: 20px;
+      padding-top: 500px;
     }
     .btn-menu-inicio {
-      padding: 20px 70px;
+      padding: 20px 90px;
       border-radius: 10px;
       margin-top: 20px;
       margin-bottom: 10px;
@@ -112,4 +148,51 @@
       width: 164px;
       height: 100px;
     }
+    .img-salida{
+      margin-left: 500px;
+    }
+  .title{
+    font-size: 30px;
+  }
+  .circulo{
+    border-radius: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: #ffffff;
+  }
+  }
+  @media (min-width:1366px)  {
+    .img-logo {
+      width: 200px;
+      height: 200px;
+    }
+    .btn-menu-inicio {
+      padding: 15px 80px;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border: none;
+      font-size: 40px;
+      text-align: center;
+      margin-top: 15%;
+    }
+    .img-card {
+      width: 164px;
+      height: 100px;
+    }
+    .img-salida{
+      margin-left: 700px;
+    }
+    .box {
+      padding-top: 100px;
+    }
+  .title{
+    font-size: 20px;
+  }
+  .circulo{
+    border-radius: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #ffffff;
+  }
   }

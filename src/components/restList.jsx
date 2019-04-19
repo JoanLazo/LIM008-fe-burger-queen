@@ -21,7 +21,7 @@ const RestList = ({ data, isError, isLoading, addPedido }) => {
                       <div className="card-body">
                         <h5 className="card-title text-center">{elem.item}</h5>
                         <p className="card-text text-center">s/.{elem.precio}</p>
-                        <button onClick={() => addPedido(elem)} className="btn-ordenar justify-content-center align-items-center color-five color-white" type="button">Ordenar</button>
+                        <button onClick={() => addPedido(elem)} className="btn-ordenar justify-content-center align-items-center color-four  color-white" type="button">Ordenar</button>
                       </div>
                     </div>
                   );
