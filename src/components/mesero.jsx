@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import BreakfastList from './BreakfastList';
 import RestList from './RestList';
 import OrderList from './pedidos/OrderList';
-import { Link } from 'react-router-dom';
 
 const Mesero = () => {
   const [data, setData] = useState([]);

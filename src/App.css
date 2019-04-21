@@ -117,8 +117,11 @@ height: 50px;
   background-image: url('https://image.freepik.com/vector-gratis/fondo-menu-restaurante_23-2147690916.jpg')
  }
  .card-title{
-   font-size: 10px;
+   font-size: 12px;
  }
+ .text-pedido{
+  font-size: 12px;
+}
  .input-log{
    width: 150px;
    height: 30px;
@@ -134,7 +137,22 @@ height: 50px;
  }
  .circulo{
   border-radius: 100%;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
   background: #ffffff;
+}
+.barra{
+ border: 2px solid black;
+ width: 82%;
+ margin-left: 45px;
+ position: relative;
+}
+.card-pedido{
+  background-color: rgba(254, 195, 0, 0.274);
+  border-radius: 5px;
+  padding: 5px;
+  border: #FEC200 2px solid;
+}
+.ml-max{
+  margin-left: 22%;
 }

@@ -1,6 +1,5 @@
 {
   "projects": {
-    "dev": "burger-queen-db58c",
-    "default": "burger-queen-db58c"
+    "dev": "burger-queen-db58c"
   }
 }
