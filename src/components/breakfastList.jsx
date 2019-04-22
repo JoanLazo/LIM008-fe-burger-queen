@@ -34,7 +34,7 @@ const BreakfastList = ({ data, isError, isLoading, addPedido }) => (
 );
 
 BreakfastList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   isError: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   addPedido: PropTypes.func.isRequired,

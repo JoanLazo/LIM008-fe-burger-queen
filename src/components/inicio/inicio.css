@@ -45,11 +45,6 @@
     width: 70px;
     height: 60px;
   }
-  .img-card {
-    display: flex;
-    width: 133px;
-    height: 100px;
-  }
   @media (max-width: 768px) and (min-width:420px)  {
     .img-logo {
       width: 150px;
@@ -68,10 +63,6 @@
       font-size: 30px;
       text-align: center;
     }
-    .img-card {
-      width: 164px;
-      height: 100px;
-    }
     .img-salida{
       margin-left: 350px;
     }
@@ -80,7 +71,7 @@
       height: 50px;
     }
   .title{
-    font-size: 20px;
+    font-size: 18px;
   }
   .circulo{
     border-radius: 100%;
@@ -107,16 +98,11 @@
       font-size: 40px;
       text-align: center;
     }
-    .img-card {
-      display: flex;
-      width: 133px;
-      height: 100px;
-    }
     .img-salida{
       margin-left: 380px;
     }
     .title{
-      font-size: 20px;
+      font-size: 18px;
     }
     .circulo{
       border-radius: 100%;
@@ -143,15 +129,11 @@
       font-size: 40px;
       text-align: center;
     }
-    .img-card {
-      width: 164px;
-      height: 100px;
-    }
     .img-salida{
       margin-left: 500px;
     }
   .title{
-    font-size: 30px;
+    font-size: 20px;
   }
   .circulo{
     border-radius: 100%;
@@ -173,10 +155,6 @@
       border: none;
       font-size: 40px;
       text-align: center;
-    }
-    .img-card {
-      width: 164px;
-      height: 100px;
     }
     .img-salida{
       margin-left: 700px;
@@ -207,10 +185,6 @@
       border: none;
       font-size: 40px;
       text-align: center;
-    }
-    .img-card {
-      width: 164px;
-      height: 100px;
     }
     .img-salida{
       margin-left: 700px;

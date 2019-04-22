@@ -7,12 +7,11 @@ import OrderList from './pedidos/OrderList';
 
 const Mesero = () => {
   const [data, setData] = useState([]);
-  // console.log(data);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [pedido, setPedido] = useState([]);
   const [verDesayuno, setVerDesayuno] = useState(true);
-  const [verResto, setVerResto] = useState(false);
+  const [verResto, setVerResto] = useState(true);
   const addPedido = (menu) => {
     if (pedido.find(e => e.id === menu.id)) {
       setPedido([...pedido]);
@@ -46,16 +45,16 @@ const Mesero = () => {
   }, []);
 
   return (
-    <div>
+    <div className="fondo">
       <div className="container-all">
-        <div className="d-flex flex-row burger-header color-one align-items-center">
+        <header className="d-flex flex-row burger-header color-one align-items-center">
           <img src="https://user-images.githubusercontent.com/44485081/56432832-7e96ba80-6294-11e9-9f69-3a197021e31d.png" className="img-nav ml-5 mt-1" alt="logo" />
-          <h1 className="mt-4 title"> ¡ Reina las 24 horas !</h1>
+          <h1 className="mt-4 title">¡ Atención exclusiva las 24 horas !</h1>
           <img src="https://user-images.githubusercontent.com/44485081/56434393-11862380-629a-11e9-8a26-14bbcc0d6916.png" className="img-nav justify-content-end mt-1 ml-3" alt="logo" />
           <button type="button" className="btn-ordenar color-six links">
             <Link className="links" to="/"><img src="https://user-images.githubusercontent.com/44485081/56434847-00d6ad00-629c-11e9-92c6-930802f0f81d.png" className="img-salida mt-3" alt="salida" /></Link>
           </button>
-        </div>
+        </header>
         <nav>
           <div className="d-flex flex-row justify-content-around py-3 color-four">
             <button onClick={() => setVerDesayuno(!verDesayuno)} className="btn-nav color-white" type="button">
@@ -68,7 +67,7 @@ const Mesero = () => {
         </nav>
       </div>
 
-      <div className="container">
+      <main className="container">
         <div className="row flex-column flex-sm-column flex-md-row flex-md-row">
           <div className="col-6">
             <div className="d-flex flex-md-column">
@@ -100,7 +99,10 @@ const Mesero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
+      <footer className="container-fluid color-one color-white py-2 text-center">
+        <h6>BURGER QUEEN © 2019</h6>
+      </footer>
     </div>
   );
 };

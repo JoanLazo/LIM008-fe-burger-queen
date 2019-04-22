@@ -8,13 +8,13 @@ describe('RestList', () => {
   it('Filtra data con categoria "resto del día"', () => {
     const data = [
       {
-        id: 1, item: 'item 1', precio: 0, categoria: 'desayuno',
+        id: 1, item: 'item 1', precio: 0, categoria: 'desayuno', url: 'http://akipan.es',
       },
       {
-        id: 2, item: 'item 2', precio: 0, categoria: 'resto del día',
+        id: 2, item: 'item 2', precio: 0, categoria: 'resto del día', url: 'http://akipan.es',
       },
       {
-        id: 3, item: 'item 3', precio: 0, categoria: 'desayuno',
+        id: 3, item: 'item 3', precio: 0, categoria: 'desayuno', url: 'http://akipan.es',
       },
     ];
     const { getByTestId } = render(<RestList data={data} />);
@@ -25,10 +25,10 @@ describe('RestList', () => {
   it('Ejecuta funcion al hacer click en item', () => {
     const data = [
       {
-        id: 1, item: 'item 1', precio: 0, categoria: 'resto del día',
+        id: 1, item: 'item 1', precio: 0, categoria: 'resto del día', url: 'http://akipan.es',
       },
       {
-        id: 2, item: 'item 2', precio: 0, categoria: 'resto del día',
+        id: 2, item: 'item 2', precio: 0, categoria: 'resto del día', url: 'http://akipan.es',
       },
     ];
     const addPedido = (elem) => {

@@ -1,9 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css?family=Bungee');
 body {
-  background:  url('http://www.tropiezosenlared.com/canvas/img/fondo_mariposas_lineas_amarillas.png');
-  background-size: 100vw 100vh;
-  background-attachment: fixed;
   font-family: 'Bungee', cursive;
 }
 .text-center {
@@ -155,4 +150,9 @@ height: 50px;
 }
 .ml-max{
   margin-left: 22%;
+}
+.fondo {
+  background:  url('http://www.tropiezosenlared.com/canvas/img/fondo_mariposas_lineas_amarillas.png');
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
 }
