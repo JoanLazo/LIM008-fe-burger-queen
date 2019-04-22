@@ -57,10 +57,10 @@ const Mesero = () => {
         </header>
         <nav>
           <div className="d-flex flex-row justify-content-around py-3 color-four">
-            <button onClick={() => setVerDesayuno(!verDesayuno)} className="btn-nav color-white" type="button">
+            <button onClick={() => setVerDesayuno(!verDesayuno)} className="btn-menu color-one color-white" type="button">
               DESAYUNO
             </button>
-            <button onClick={() => setVerResto(!verResto)} className="btn-nav color-white" type="button">
+            <button onClick={() => setVerResto(!verResto)} className="btn-menu color-one color-white" type="button">
             RESTO DEL DÍA
             </button>
           </div>

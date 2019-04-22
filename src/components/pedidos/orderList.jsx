@@ -91,8 +91,10 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
       {' '}
       <span />
       <div className="flex-row">
-        <label htmlFor="input" className="mr-2 mt-3 pl-5">Cliente</label>
-        <input type="text" name="username" value={pedido.username} onChange={handleInputChange} className="input-log" data-testid="client-input" />
+        <label className="mr-2 mt-3 pl-5">
+          Cliente
+          <input type="text" name="username" value={pedido.username} onChange={handleInputChange} className="input-log" data-testid="client-input" />
+        </label>
       </div>
       <div className="d-flex flex-row justify-content-center align-items-center">
         <button data-testid="add-to-firebase" onClick={() => setOrderUser(inputValue, pedido, totalPrice)} type="button" className="btn-enviar color-one mt-3 mb-3 color-white text-center">Enviar a cocina</button>
