@@ -1,36 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
 import './orderList.css';
 import PropTypes from 'prop-types';
-import firebase from '../../config/config';
+// import firebase from '../../config/config';
 
-const OrderList = ({ pedido, totalCost, addP, removeP, deleteProd }) => {
+const OrderList = ({ pedido, totalCost, addP, removeP, deleteProd, handleInputChange, setOrderUser, inputValue }) => {
   // console.log(pedido);
 
   const totalPrice = totalCost(pedido);
 
-  const db = firebase.firestore();
-  const setOrderUser = (userName, userPedido, priceTotal) => {
-    db.collection('Pedidos').doc().set({
-      userName,
-      userPedido,
-      priceTotal,
-      userDate: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-      .then(() => {
-        console.log('Document successfully written!');
-      })
-      .catch((error) => {
-        console.error('Error writing document: ', error);
-      });
-  };
-  const [inputValue, setInputValue] = useState('');
-  const handleInputChange = (event) => {
-    const { value } = event.target;
-    setInputValue(inputValue);
-    setInputValue(value);
-  };
   return (
     <section className="d-flex flex-column my-5 py-5 flex-nowrap color-white-b py-5 pedido">
       <div className="pl-5 pr-5">
@@ -95,5 +74,8 @@ OrderList.propTypes = {
   addP: PropTypes.func.isRequired,
   removeP: PropTypes.func.isRequired,
   deleteProd: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  setOrderUser: PropTypes.func.isRequired,
+  inputValue: PropTypes.string.isRequired,
 };
 export default OrderList;
