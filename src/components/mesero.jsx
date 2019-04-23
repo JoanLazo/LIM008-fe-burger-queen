@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Link, Route, Router } from 'react-router-dom';
 import BreakfastList from './BreakfastList';
 import RestList from './RestList';
 import OrderList from './pedidos/OrderList';
@@ -25,6 +25,21 @@ const Mesero = () => {
     const total = precio.reduce((a, b) => a + b, 0);
     return total;
   };
+  const addP = (prod, e) => {
+    e.count += 1;
+    setPedido([...prod]);
+  };
+
+  const removeP = (prod, e) => {
+    if (e.count > 1) {
+      e.count -= 1;
+      setPedido([...prod]);
+    }
+  };
+
+  const deleteProd = (id) => {
+    setPedido(pedido.filter(e => e.id !== id));
+  };
   useEffect(() => {
     const fetchData = async () => {
       setIsError(false);
@@ -33,8 +48,8 @@ const Mesero = () => {
         const result = await axios(
           'https://joanlazo.github.io/LIM008-fe-burger-queen/src/data-menu/menu.json',
         );
-        // console.log(result);
         setData(result.data);
+        console.log(result);
       } catch (error) {
         setIsError(true);
       }
@@ -51,9 +66,9 @@ const Mesero = () => {
           <img src="https://user-images.githubusercontent.com/44485081/56432832-7e96ba80-6294-11e9-9f69-3a197021e31d.png" className="img-nav ml-5 mt-1" alt="logo" />
           <h1 className="mt-4 title">¡ Atención exclusiva las 24 horas !</h1>
           <img src="https://user-images.githubusercontent.com/44485081/56434393-11862380-629a-11e9-8a26-14bbcc0d6916.png" className="img-nav justify-content-end mt-1 ml-3" alt="logo" />
-          <button type="button" className="btn-ordenar color-six links">
+          {/* <button type="button" className="btn-ordenar color-six links">
             <Link className="links" to="/"><img src="https://user-images.githubusercontent.com/44485081/56434847-00d6ad00-629c-11e9-92c6-930802f0f81d.png" className="img-salida mt-3" alt="salida" /></Link>
-          </button>
+          </button> */}
         </header>
         <nav>
           <div className="d-flex flex-row justify-content-around py-3 color-four">
@@ -95,6 +110,9 @@ const Mesero = () => {
                 pedido={pedido}
                 setPedido={setPedido}
                 totalCost={totalCost}
+                addP={addP}
+                removeP={removeP}
+                deleteProd={deleteProd}
               />
             </div>
           </div>

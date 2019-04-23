@@ -5,23 +5,9 @@ import './orderList.css';
 import PropTypes from 'prop-types';
 import firebase from '../../config/config';
 
-const OrderList = ({ pedido, setPedido, totalCost }) => {
+const OrderList = ({ pedido, totalCost, addP, removeP, deleteProd }) => {
   // console.log(pedido);
-  const addP = (prod, e) => {
-    e.count += 1;
-    setPedido([...prod]);
-  };
 
-  const removeP = (prod, e) => {
-    if (e.count > 1) {
-      e.count -= 1;
-      setPedido([...prod]);
-    }
-  };
-
-  const deleteProd = (id) => {
-    setPedido(pedido.filter(e => e.id !== id));
-  };
   const totalPrice = totalCost(pedido);
 
   const db = firebase.firestore();
@@ -58,7 +44,7 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
         </div>
         <div data-testid="container-order">
           {pedido.map(e => (
-            <div data-testid={`${e.id}-button`} key={e.id} className="d-flex flex-column card-pedido mt-2 mb-2">
+            <div data-testid={`${e.id}-order-elem`} key={e.id} className="d-flex flex-column card-pedido mt-2 mb-2">
               <div className="flex-row">
                 <p className="text-pedido">{e.item}</p>
               </div>
@@ -105,7 +91,9 @@ const OrderList = ({ pedido, setPedido, totalCost }) => {
 
 OrderList.propTypes = {
   pedido: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  setPedido: PropTypes.func.isRequired,
   totalCost: PropTypes.func.isRequired,
+  addP: PropTypes.func.isRequired,
+  removeP: PropTypes.func.isRequired,
+  deleteProd: PropTypes.func.isRequired,
 };
 export default OrderList;
