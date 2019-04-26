@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import BreakfastList from './BreakfastList';
 import RestList from './RestList';
 import OrderList from './pedidos/OrderList';
@@ -90,9 +90,9 @@ const Mesero = () => {
           <img src="https://user-images.githubusercontent.com/44485081/56432832-7e96ba80-6294-11e9-9f69-3a197021e31d.png" className="img-nav ml-5 mt-1" alt="logo" />
           <h1 className="mt-4 title">¡ Atención exclusiva las 24 horas !</h1>
           <img src="https://user-images.githubusercontent.com/44485081/56434393-11862380-629a-11e9-8a26-14bbcc0d6916.png" className="img-nav justify-content-end mt-1 ml-3" alt="logo" />
-          <button type="button" className="btn-ordenar color-six links">
+          {/* <button type="button" className="btn-ordenar color-six links">
             <Link className="links" to="/"><img src="https://user-images.githubusercontent.com/44485081/56434847-00d6ad00-629c-11e9-92c6-930802f0f81d.png" className="img-salida mt-3" alt="salida" /></Link>
-          </button>
+          </button> */}
         </header>
         <nav>
           <div className="d-flex flex-row justify-content-around py-3 color-four">

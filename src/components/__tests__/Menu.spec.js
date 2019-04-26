@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, fireEvent, cleanup, waitForElement, act } from 'react-testing-library';
+import {
+  render, fireEvent, cleanup, waitForElement, act,
+} from 'react-testing-library';
 import Mesero from '../Mesero';
 
 afterEach(cleanup);
